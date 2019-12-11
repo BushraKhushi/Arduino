@@ -14,15 +14,15 @@ void loop() {
   
     int i;
     double output=0;
-    for(i=0;i<200;i++){
+    for(i=0;i<400;i++){
       
       current=analogRead(A8);
       sum=sum+current;
      }
-     output=sum/200;
+     output=sum/400;
      sum=0;
-     output = 0.0081*output - 0.0164;
+     output = (output - 15.636)/95.126;
 
-      Serial.println(output);
-  delay(1000);
+     Serial.println(output);
+  delay(500);
 }
